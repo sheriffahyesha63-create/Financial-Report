@@ -401,12 +401,12 @@
 
       // Check credentials (case-insensitive username)
       if (username.toLowerCase() === validUsername.toLowerCase() && password === validPassword) {
-        // Success - store session and redirect
+        // Success - store session and redirect to login.html
         localStorage.setItem('icfLoggedIn', 'true');
         localStorage.setItem('icfUser', username);
         
-        // Redirect to dashboard
-        window.location.href = 'dash.html';
+        // Redirect to login.html (which will then redirect to dashboard)
+        window.location.href = 'login.html';
       } else {
         // Invalid credentials
         errorText.textContent = 'Invalid username or password. Please try again.';
@@ -438,12 +438,13 @@
     `;
     document.head.appendChild(style);
 
-    // Check if already logged in (redirect to dashboard)
+    // Check if already logged in
     window.addEventListener('DOMContentLoaded', function() {
       if (localStorage.getItem('icfLoggedIn') === 'true') {
-        // Optionally redirect to dash if already logged in
+        // If already logged in, stay on login page or redirect to dashboard
+        // For now, we'll stay on login page and let user decide
+        // You can uncomment below to auto-redirect to dashboard
         // window.location.href = 'dash.html';
-        // Uncomment above if you want auto-redirect
       }
     });
 
