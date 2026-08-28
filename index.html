@@ -237,18 +237,6 @@
       letter-spacing: 0.5px;
     }
 
-    .btn-prev {
-      background: rgba(255, 255, 255, 0.08);
-      color: #c6d9f5;
-      border: 2px solid rgba(255, 255, 255, 0.15);
-      backdrop-filter: blur(5px);
-    }
-    .btn-prev:hover {
-      background: rgba(255, 255, 255, 0.15);
-      transform: translateX(-4px);
-      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
-    }
-
     .btn-next {
       background: linear-gradient(135deg, #4b7bb8 0%, #2a4a7a 100%);
       color: white;
@@ -402,11 +390,8 @@
         expenses, and financial reports in one place.
       </div>
 
-      <!-- Navigation Buttons -->
+      <!-- Navigation Buttons - Previous removed -->
       <div class="nav-buttons">
-        <a href="#" class="btn-nav btn-prev" onclick="alert('You are on the first page.')">
-          <i class="fas fa-arrow-left"></i> Previous
-        </a>
         <a href="login.html" class="btn-nav btn-next">
           Get Started <i class="fas fa-arrow-right"></i>
         </a>
@@ -465,13 +450,10 @@
       }
     });
 
-    // Keyboard navigation
+    // Keyboard navigation - only right arrow and enter go to login
     document.addEventListener('keydown', function(e) {
       if (e.key === 'ArrowRight' || e.key === 'Enter') {
         window.location.href = 'login.html';
-      }
-      if (e.key === 'ArrowLeft') {
-        alert('You are on the first page.');
       }
     });
 
